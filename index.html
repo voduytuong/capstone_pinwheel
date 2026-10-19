@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pinwheel-tailwind</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./slick/slick.css" />
+    <link rel="stylesheet" href="./slick/slick-theme.css" />
     <!--* BRAND - FONT_AWESOME -->
     <link
       rel="stylesheet"
@@ -26,14 +38,231 @@
     <!--* Main CSS -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
+  <body class="">
     <!--*  Header -->
-    <header></header>
-
+    <header>
+      <nav class="static w-full z-20 top-0 start-0 mt-3 relative">
+        <div
+          class="max-w-[1202px] flex flex-wrap items-center justify-between mx-auto p-4"
+        >
+          <a
+            href="https://capstone-tailwind1.vercel.app/index.html"
+            class="flex items-center space-x-3 rtl:space-x-reverse"
+          >
+            <img src="img/logo.svg" class="h-8 w-full" alt="Pinwheel Logo" />
+          </a>
+          <div
+            class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
+          >
+            <button
+              type="button"
+              class="text-black bg-white hover:bg-brand-strong box-border border border-transparent rounded-3xl shadow-xs font-medium leading-5 rounded-base text-sm px-8 py-3"
+            >
+              Sing up now
+            </button>
+            <button
+              data-collapse-toggle="navbar-sticky"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+              aria-controls="navbar-sticky"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-6 h-6"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                  d="M5 7h14M5 12h14M5 17h14"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            id="navbar-sticky"
+          >
+            <ul
+              class="flex flex-col p-4 md:p-0 mt-4 font-normal border border-default rounded-base md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary menu"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-black bg-brand rounded-sm md:bg-transparent md:text-fg-brand md:p-0 md:pb-2 relative p-0 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-[linear-gradient(184.78deg,#fa709a_7.64%,#fee140_120.07%)] after:content-['']"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                  >BLog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                  >How It Works</a
+                >
+              </li>
+              <li>
+                <button
+                  id="dropdownNvbarButton"
+                  data-dropdown-toggle="dropdownNavbar"
+                  class="flex items-center justify-between w-full py-2 px-3 rounded font-normal text-heading md:w-auto hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0"
+                >
+                  Pages
+                  <svg
+                    class="w-4 h-4 ms-1.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m19 9-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div
+                  id="dropdownNavbar"
+                  class="z-10 hidden bg-white border border-default-medium border-orange-200 rounded-lg shadow-lg w-44"
+                >
+                  <ul
+                    class="p-2 text-sm text-body font-medium"
+                    aria-labelledby="dropdownNvbarButton"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                        >Career</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                        >Career Single</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                        >Integrations</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                        >Integration Single</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                        >Pricing</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                        >Changelogs</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                        >Terms & Conditions</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
     <!--* Start Main -->
     <main>
       <!--* Carousel -->
-      <section></section>
+      <section class="carousel relative">
+        <div
+          class="carousel__content max-w-[1202px] mx-auto grid md:grid-cols-2 py-30 items-center p-4"
+        >
+          <div class="carousel__left">
+            <h1 class="font-merriweather text-[47px] font-bold leading-15">
+              Scale design & dev
+              <br />
+              operations with
+              <br />
+              Avocode Enterprise
+            </h1>
+            <p class="py-6 text-base text-[#888888]">
+              A fully integrated suite of authentication & authoriz products,
+              Stytch’s <br />
+              platform removes the headache of.
+            </p>
+            <button
+              class="shadow-lg hover:shadow-none transition-shadow duration-300 font-medium text-sm px-6 py-3 items-center"
+            >
+              Download The Theme
+            </button>
+          </div>
+          <div class="carousel__right w-full">
+            <img src="./img/banner-img.png" alt="" />
+          </div>
+        </div>
+        <img
+          class="banner-shape absolute -top-[120px] right-0 -z-[1] w-full max-w-[30%]"
+          src="./img/banner-shape.svg"
+          alt=""
+        />
+      </section>
 
       <!--* Solution -->
       <section></section>
@@ -50,17 +279,262 @@
       <!--* End Service -->
 
       <!--* Customers -->
-      <section></section>
+      <section class="customers container max-w-[1202px] mx-auto p-4 mb-30">
+        <div class="customers__content grid md:grid-cols-10">
+          <div class="customers__content-left col-span-6 w-full">
+            <h1 class="font-merriweather text-[36px] font-bold leading-12">
+              Our customers have nice <br />
+              things to say about us
+            </h1>
+          </div>
+          <div class="customers__content-right col-span-4 w-full">
+            <p class="text-[16px] leading-[26px] text-base text-[#888888]">
+              Lorem ipsum dolor sit amet, consectetur <br />adipiscing elit.
+              Morbi egestas Werat viverra id <br />
+              et aliquet. vulputate egestas sollicitudin .
+            </p>
+          </div>
+        </div>
+        <div class="customers__list-items mt-20">
+          <div class="customers__item text-center">
+            <div
+              class="bg-gradient border-2 rounded-full border-transparent w-[90px] h-[90px] mb-5 mx-auto"
+            >
+              <img
+                src="./img/user-5.png"
+                alt=""
+                class="w-full h-auto mx-auto"
+              />
+            </div>
+            <h1
+              class="font-merriweather text-[24px] leading-[31px] font-bold mb-2"
+            >
+              Courtney Henry
+            </h1>
+            <p class="text-[16px] leading-[26px] text-[#666666] mb-4">
+              microsoft corp
+            </p>
+            <p class="text-[16px] leading-[26px] text-[#888888]">
+              Our platform helps build secure onboarding authentica experiences
+              & engage your users. We build .
+            </p>
+            <div
+              class="mt-6 flex items-center justify-center space-x-2.5 mb-25"
+            >
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star-white.svg" alt="" />
+            </div>
+          </div>
+          <div class="customers__item text-center">
+            <div
+              class="bg-gradient border-2 rounded-full border-transparent w-[90px] h-[90px] mb-5 mx-auto"
+            >
+              <img
+                src="./img/user-2.png"
+                alt=""
+                class="w-full h-auto mx-auto"
+              />
+            </div>
+            <h1
+              class="font-merriweather text-[24px] leading-[31px] font-bold mb-2"
+            >
+              Ronald Richards
+            </h1>
+            <p class="text-[16px] leading-[26px] text-[#666666] mb-4">
+              meta limited
+            </p>
+            <p class="text-[16px] leading-[26px] text-[#888888]">
+              Our platform helps build secure onboarding authentica experiences
+              & engage your users. We build .
+            </p>
+            <div
+              class="mt-6 flex items-center justify-center space-x-2.5 mb-25"
+            >
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star-white.svg" alt="" />
+            </div>
+          </div>
+          <div class="customers__item text-center">
+            <div
+              class="bg-gradient border-2 rounded-full border-transparent w-[90px] h-[90px] mb-5 mx-auto"
+            >
+              <img
+                src="./img/user-6.png"
+                alt=""
+                class="w-full h-auto mx-auto"
+              />
+            </div>
+            <h1
+              class="font-merriweather text-[24px] leading-[31px] font-bold mb-2"
+            >
+              Bessie Cooper
+            </h1>
+            <p class="text-[16px] leading-[26px] text-[#666666] mb-4">
+              apple inc ltd
+            </p>
+            <p class="text-[16px] leading-[26px] text-[#888888]">
+              Our platform helps build secure onboarding authentica experiences
+              & engage your users. We build .
+            </p>
+            <div
+              class="mt-6 flex items-center justify-center space-x-2.5 mb-25"
+            >
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star.svg" alt="" />
+              <img src="./img/star-white.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!--* Helping -->
-      <section></section>
+      <section
+        class="helping max-w-[1202px] mx-auto bg-gradient container row justify-center rounded-b-[80px] rounded-t-[20px] px-[40px] pb-[75px] pt-16 items-center"
+      >
+        <div class="helping_content grid grid-cols-10 w-full">
+          <div class="helping__left col-span-6 pl-15">
+            <h1
+              class="font-merriweather text-[47px] font-bold leading-[60px] text-white"
+            >
+              Helping teams in the world with focus
+            </h1>
+            <button
+              type="button"
+              class="text-black bg-white hover:bg-brand-strong box-border border border-transparent rounded-4xl shadow-xs font-medium leading-5 rounded-base text-sm px-8 py-4 mt-8"
+            >
+              Download The Theme
+            </button>
+          </div>
+          <div class="helping__right col-span-4 pr-15">
+            <p class="text-[16px] leading-[26px] text-base text-white">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              egestas Werat viverra id et aliquet. vulputate egestas
+              sollicitudin .
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
     <!--* End Main -->
 
     <!--* Footer -->
-    <footer></footer>
+    <footer class="footer container max-w-[1202px] mx-auto p-4 pt-50">
+      <div class="footer__list-items grid grid-cols-4 gap-8">
+        <div class="footer__item px-[24px]">
+          <img src="./img/logo.svg" alt="" />
+          <p class="text-[14px] leading-[20px] text-[#888888] mt-6">
+            Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo
+            tellus, sed condimentum volutpat.
+          </p>
+        </div>
+        <div class="footer__item px-[24px]">
+          <h1 class="mb-8 text-[16px] leading-[20px] font-semibold">Socials</h1>
+
+          <p class="text-[14px] leading-[20px] text-[#888888]">
+            themefisher@gmail.com
+          </p>
+
+          <div
+            class="footer__item-icon relative -left-7 flex items-center gap-6 w-full mt-10 px-[24px]"
+          >
+            <a
+              href="#"
+              class="w-[40px] h-[40px] min-w-[40px] shrink-0 flex items-center justify-center rounded-full hover:bg-[#fe621e] hover:text-white transition-colors duration-300"
+            >
+              <i class="fa-brands fa-facebook text-[20px]"></i>
+            </a>
+            <a
+              href="#"
+              class="w-[40px] h-[40px] min-w-[40px] shrink-0 flex items-center justify-center rounded-full hover:bg-[#fe621e] hover:text-white transition-colors duration-300"
+            >
+              <i class="fa-brands fa-twitter text-[20px]"></i>
+            </a>
+            <a
+              href="#"
+              class="w-[40px] h-[40px] min-w-[40px] shrink-0 flex items-center justify-center rounded-full hover:bg-[#fe621e] hover:text-white transition-colors duration-300"
+            >
+              <i class="fa-brands fa-linkedin-in text-[20px]"></i>
+            </a>
+            <a
+              href="#"
+              class="w-[40px] h-[40px] min-w-[40px] shrink-0 flex items-center justify-center rounded-full hover:bg-[#fe621e] hover:text-white transition-colors duration-300"
+            >
+              <i class="fa-brands fa-skype text-[20px]"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer__item px-[24px]">
+          <h1 class="mb-8 text-[16px] leading-[20px] font-semibold">
+            Quick Links
+          </h1>
+
+          <div class="footer__item-subPages flex flex-col items-start gap-2">
+            <a
+              href="#"
+              class="text-[14px] text-[#888888] hover:underline hover:text-[#fe621e] transition-colors duration-300"
+              >About</a
+            >
+            <a
+              href="#"
+              class="text-[14px] text-[#888888] hover:underline hover:text-[#fe621e] transition-colors duration-300"
+              >Category</a
+            >
+            <a
+              href="#"
+              class="text-[14px] text-[#888888] hover:underline hover:text-[#fe621e] transition-colors duration-300"
+              >Testimonial</a
+            >
+            <a
+              href="#"
+              class="text-[14px] text-[#888888] hover:underline hover:text-[#fe621e] transition-colors duration-300"
+              >Contact</a
+            >
+          </div>
+        </div>
+        <div class="footer__item px-[24px]">
+          <h1 class="mb-8 text-[16px] leading-[20px] font-semibold">
+            Location & Contact
+          </h1>
+          <p class="text-[14px] leading-[20px] text-[#888888]">
+            2118 Thornridge Cir. Syracuse, Connecticut 35624
+          </p>
+          <p class="text-[14px] leading-[20px] text-[#888888]">
+            (704) 555-0127
+          </p>
+        </div>
+      </div>
+      <div class="text-center mt-20 mb-8 text-[14px] text-[#888888]">
+        Designed And Developed by Themefisher
+      </div>
+    </footer>
 
     <!--* ADD FLOWBITE -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./slick/slick.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".customers__list-items").slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          dots: true,
+          arrows: true,
+        });
+      });
+    </script>
   </body>
 </html>
